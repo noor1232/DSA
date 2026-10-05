@@ -1,46 +1,35 @@
 //better Approach (two pointer approach) for two sum
 
 import java.util.Arrays;
-
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
-
+class solution{
+    public int[] twoSum(int[] nums, int target){
         int[] arr = nums.clone();
-
-        Arrays.sort(arr);
-
         int left = 0;
-        int right = arr.length - 1;
+        int right = nums.length - 1;
 
-        while (left < right) {
-
-            int sum = arr[left] + arr[right];
-
-            if (sum == target) {
-
-                // Find original indices
+        while(left<right){
+            int sum = nums[left] + nums[right];
+            if(sum == target){
                 int index1 = -1;
                 int index2 = -1;
-
-                for (int i = 0; i < nums.length; i++) {
-                    if (nums[i] == arr[left] && index1 == -1) {
+                for(int i=0;i<nums.length;i++){
+                    if(nums[i] ==left && index1 == -1){
                         index1 = i;
-                    } 
-                    else if (nums[i] == arr[right] && index2 == -1) {
+                    }
+                    else if(nums[i]== right && index2 == -1){
                         index2 = i;
                     }
                 }
-
-                return new int[]{index1, index2};
+                return new int[]{index1,index2};
             }
-
-            if (sum < target) {
+            if(sum < target){
                 left++;
-            } else {
+            }
+            else{
                 right--;
             }
         }
-
         return new int[]{};
     }
 }
+
