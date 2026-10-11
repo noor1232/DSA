@@ -21,4 +21,14 @@ class Solution {
 
         return slow;
     }
+    public static void main(String[] args) {
+
+        int[] nums = {1, 3, 4, 2, 2};
+
+        Solution obj = new Solution();
+
+        int ans = obj.findDuplicate(nums);
+
+        System.out.println(ans);
+    }
 }
