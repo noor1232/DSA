@@ -1,5 +1,5 @@
 //Optimized Aproach
-
+import java.util.Arrays;
 import java.util.HashSet;
 
 class Solution {
@@ -32,6 +32,20 @@ class Solution {
         int missing = expectedSum + repeated - actualSum;
         
         return new int[]{repeated, missing};
+    }
+
+    public static void main(String[] args) {
+
+        int[][] grid = {
+            {1, 3},
+            {2, 2}
+        };
+
+        Solution obj = new Solution();
+
+        int[] ans = obj.findMissingAndRepeatedValues(grid);
+
+        System.out.println(Arrays.toString(ans));
     }
 }
 
